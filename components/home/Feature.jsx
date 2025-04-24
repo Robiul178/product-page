@@ -2,11 +2,11 @@ import { features } from "../data/feature";
 
 export default function Feature() {
   return (
-    <section className="flex justify-around py-12">
+    <section className="md:flex justify-around py-12 max-sm:p-4 ">
       {features.map(({ title, desc, icon }, i) => (
         <div
           key={i}
-          className="flex gap-3 items-center justify-center border rounded p-4"
+          className="flex gap-3 items-center justify-center border rounded p-4 max-sm:mb-3"
         >
           <div className="text-3xl text-orange-300">{icon}</div>
           <div className="">

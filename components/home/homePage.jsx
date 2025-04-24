@@ -3,14 +3,13 @@ import React from "react";
 import Banner from "./Banner";
 import Feature from "./Feature";
 
-const HomePage = () => {
+export default function HomePage() {
   return (
     <div className="font-sans text-gray-800">
       <Banner />
       <div className="max-w-6xl mx-auto">
         <Feature />
       </div>
-
       {/* Product Section */}
       <section className="px-4 md:px-20 py-12">
         <h2 className="text-2xl font-bold mb-6">New Arrivals</h2>
@@ -18,15 +17,32 @@ const HomePage = () => {
           <ProductPage />
         </div>
       </section>
-
       {/* Banner */}
-      <section className="bg-blue-100 py-10 text-center">
-        <h2 className="text-xl md:text-3xl font-bold">
-          Summer Sale - Up to 50% Off All Products!
-        </h2>
-        <button className="mt-4 bg-white border border-black px-6 py-2 hover:bg-black hover:text-white transition-all">
-          Shop Now →
-        </button>
+      <section className="relative bg-slate-200 h-[250px]  text-center ">
+        <div className="flex justify-between">
+          <div className="max-sm:hidden">
+            <img
+              src="/assets/111-removebg-preview.png"
+              alt=""
+              className="h-[250px] w-full"
+            />
+          </div>
+          <div className="flex flex-col justify-center items-center text-start px-4 md:px-20">
+            <h2 className="text-xl md:text-3xl font-bold">
+              Summer Sale - Up to 50% Off <br /> All Products!
+            </h2>
+            <button className="mt-4 bg-white border border-black px-6 py-2 hover:bg-black hover:text-white transition-all">
+              Shop Now →
+            </button>
+          </div>
+          <div>
+            <img
+              src="/assets/nnn-removebg-preview.png"
+              alt=""
+              className="h-[250px] w-full"
+            />
+          </div>
+        </div>
       </section>
 
       {/* Blog Section */}
@@ -81,6 +97,4 @@ const HomePage = () => {
       </section>
     </div>
   );
-};
-
-export default HomePage;
+}

@@ -1,29 +1,16 @@
 "use client";
 
-import { useProduct } from "@/app/components/ProductContext";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useProduct } from "@/components/ProductContext";
 
 export default function page({ params }) {
   const { slug } = params;
 
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://admin.refabry.com/api/all/product/get")
-      .then((res) => {
-        setProducts(res.data?.data?.data || []);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+  const { products } = useProduct();
 
   const product = products.find((product) => product.id === Number(slug));
   if (!product) {
     return <div className="text-center text-2xl">Product not found</div>;
   }
-
-  console.log(product);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 p-6 md:p-10">
@@ -70,7 +57,7 @@ export default function page({ params }) {
             {["L", "M", "XL", "XXL", "3XL", "4XL"].map((size) => (
               <button
                 key={size}
-                className={`px-3 py-0.5 border rounded ${
+                className={`px-3  border rounded ${
                   size === "M" ? "bg-slate-700 text-white" : "bg-white"
                 }`}
               >
@@ -82,10 +69,10 @@ export default function page({ params }) {
 
         {/* Buttons */}
         <div className="flex gap-4 mt-10">
-          <button className="bg-slate-800 text-white px-6 py-2 rounded">
+          <button className="bg-slate-800 text-white px-6 py-1  rounded">
             Add to Cart
           </button>
-          <button className="border border-slate-800 text-black px-6 py-2 rounded">
+          <button className="border border-slate-800 text-black px-6 py-1 rounded">
             Buy Now
           </button>
         </div>

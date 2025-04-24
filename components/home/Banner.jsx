@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Banner() {
   return (
-    <section className="bg-gray-300 px-4 h-[600px] md:px-20 text-center md:text-left ">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-300 px-4 md:h-[600px] md:px-20 text-center md:text-left ">
+      <div className="max-w-7xl mx-auto max-sm:py-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div>
             <p className="uppercase tracking-widest text-sm">
