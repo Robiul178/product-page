@@ -107,15 +107,15 @@ export default function HomePage() {
               Get the latest updates, articles, and resources, sent to your
               inbox weekly.
             </p>
-            <form className="flex flex-col sm:flex-row items-center ">
+            <form className="md:flex  items-center ">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full max-sm:w-auto flex-1 px-4 py-[7px] outline-none  border border-gray-300 "
+                className="w-full max-sm:w-full flex-1 px-4 py-[7px] outline-none  border border-gray-300 max-sm:mb-3"
               />
               <button
                 type="submit"
-                className="bg-slate-700 text-white px-6 py-2  hover:bg-slate-600 transition"
+                className="bg-slate-700 max-sm:w-full text-white px-6 py-2  hover:bg-slate-600 transition"
               >
                 Subscribe
               </button>

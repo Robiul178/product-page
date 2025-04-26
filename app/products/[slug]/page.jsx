@@ -2,9 +2,11 @@
 
 import { useProduct } from "@/components/ProductContext";
 import ProductDetails from "@/components/ProductDetails";
+import { useParams } from "next/navigation";
 
 export default function page({ params }) {
-  const { slug } = params;
+  // const { slug } =  params;
+  const { slug } = useParams();
   const { products } = useProduct();
 
   const product = products.find((product) => product.id === Number(slug));
